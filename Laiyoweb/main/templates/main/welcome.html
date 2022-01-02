@@ -1,0 +1,74 @@
+{% extends 'main/base.html'%}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'main/css/welcome.css' %}">
+{% endblock %}
+
+{% block nav %}
+    <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}"><i class="bi-house-door"></i></a></li></a></li>
+    <li title="help" class="header-icon small-icon"><a class="link-icon" onclick=scrollV() href="#info">How it works</a></li>
+    <li title="help" class="header-icon small-icon small-cap"><a class="link-icon" onclick=scrollV() href="#faq">faq</a></li>
+{% endblock %}
+{% block main %}
+<div class="catImages container">
+<div class="row wlc">
+    <div class="wlcMsg col">
+        <h1><span> Sewing your outfits efficiently </span></h1>
+    </div>
+    <div class="wlcPic col" id="slideShow">
+    <div id="wrap">
+    <div class="slideimg">
+        <img src="{% static 'main/images/pattern-1484981.jpg' %}">
+    </div>    
+    <div class="slideimg">
+        <img src="{% static 'main/images/bermix-studio-wJ7atxTNeQE-unsplash.jpg' %}">
+    </div>
+    <div class="slideimg">
+        <img src="{% static 'main/images/blake-connally-IKUYGCFmfw4-unsplash.jpg' %}">
+    </div>
+    </div>
+    </div>    
+</div>
+<div class="row category">
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Female clothings </span>
+    </div>
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Male clothings </span>
+    </div>
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Infants </span>
+    </div>
+</div>
+<div class="row category justify-content-center">
+    <div class="col-4 category-item">
+        <a href="#"><img src="{% static 'main/images/dressmaker-1416196.jpg' %}"></a>
+        <span class="caption"> Traditional attires </span>
+    </div>
+    <div class="col-4 category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Modern clothings </span>
+    </div>
+    <!--
+    <div class="col-4 category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Classic clothings </span>
+    </div>
+    -->
+</div>
+
+</div>
+<div class="info" id="info">
+    <h2> How it works </h2>
+</div>
+<div class="faq" id="faq">
+    <h2> Frequently Asked Questions </h2>
+</div>
+<a href="#main" onclick="scrollV()" class="top-anchor">Back to top <i class="bi-arrow-up"></i></a>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'main/js/welcome.js' %}"></script>    
+{% endblock %}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+        {% block title %}
+        {% endblock %}
+        </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{% static 'main/css/font/bootstrap-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+        {% block links %}
+        {% endblock %}
+    </head>
+    <body>
+    {% block random %}    
+    {% endblock %}
+    {% if messages %}	
+            <div class="messages">
+            <ul>
+                {% for message in messages %}
+                <li {% if message.tags %} class="alert {{message.tags}} alert-dismissible fade show" {% endif %} role="alert">
+                    {{ message }}	
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </li>
+                {% endfor %}
+            </ul>
+            </div>
+	{% endif %}    
+
+    {% block header %}
+    <header tabindex="0">
+        <div class="header-container" id="header" style="top: 0em">
+            <div class="logo" tabindex="0">
+                <a href="{% url 'main:welcome' %}" class="black-link small-cap">LAYO</a>
+            </div>
+            <nav class="header-nav">    
+                <ul>
+                    {% block nav %}
+                    <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}"><i class="bi-house-door"></i></a></li></a></li>
+                    <li title="help" class="header-icon small-icon"><a class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
+                    <li title="help" class="header-icon small-icon small-cap"><a class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>
+                    {% endblock %}
+                </ul>
+            </nav>
+            {% if request.user == AnonymousUser %}   
+                <a href="{% url 'main:auth' %}" class="user">    
+                    <button class='logInOut btn-outline-dark'>
+                        Sign In/Up
+                    </button>
+                </a>    
+            {% else %}
+            <div class="user">    
+                <span class="username">
+                    {{ request.user }}
+                </span> </p> 
+                <a href="{% url 'main:logout' %}" class="user">    
+                    <button class='logInOut btn-outline-dark'>
+                        Logout
+                    </button>
+                </a>
+            </div>
+            {% endif %}
+            </div>
+        </div>  
+    </header>
+    {% endblock %}
+    
+    <div class="body-container" id="body-container">
+        <div class="main" id="main">
+            <main>
+                {% block main %}
+                {% endblock %}
+            </main>
+        </div>
+        <footer>
+            <div class="footer">
+                <div class="contact">
+                    <h3>Contact us</h3>
+                    <ul>
+                        <li>
+                            <img>
+                            <span>:phone-number</span>    
+                        </li>
+                        <li>
+                            <img>
+                            <span>:facebook-page</span>    
+                        </li>
+                        <li>
+                            <img>
+                            <span>:instagram-account</span>
+                        </li>
+                        <li>
+                            <img>
+                            <span>:linkedIn</span>    
+                        </li>
+                        <li>
+                            <img>
+                            <span>:twitter</span>    
+                        </li>
+                    </ul>
+                </div>    
+                <div class="join-us">
+                    <h3>Join us</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Become a tailor on Layo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy Layo 2022
+                </div>
+            </div>
+        </footer>
+    {% block headertoggle %}
+    <div class="toggle-header">
+        <span class="arrow-up" id="arrow-up" onclick="toggleHeader()"><i class="bi-arrow-90deg-up"></i></span>
+    </div>
+    {% endblock %}
+    </div>
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>    
+    <script src="{% static 'main/js/base.js' %}"></script>    
+    {% block scripts %}
+    {% endblock %}
+    </body>
+</html>

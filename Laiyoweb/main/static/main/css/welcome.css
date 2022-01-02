@@ -1,0 +1,89 @@
+body {
+    background: linear-gradient(white, rgba(225, 225, 225, 0.8), white), url(../images/italian-dressmaker-1240630.jpg);
+}
+div.main {
+    margin: 2em;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+h1 {
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+.wlc {
+    margin: 2em 0px;
+    margin-bottom: 4em;
+}
+.wlcMsg {
+    font-family: emoji;
+    text-align: left;  
+    color: rgb(203 83 83);
+}
+.wlcMsg h1 {
+    font-size: 2.8em;
+    padding: 0.5em 0px;
+}
+
+#slideShow {
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    height: 60vh;
+    margin: 2em 0em;
+}
+.wlcPic div {
+    height: 100%;
+    position: relative;
+}
+#wrap {
+    position: relative;
+    top: 0vh;
+    transition: top 4s;
+    transition-timing-function: ease-in-out;
+}
+.category {
+    margin-bottom: 2em;
+    text-align: center;
+}
+.category-item img:hover {
+    filter: brightness(70%);
+    transition: filter 0.5s;
+}
+.caption {
+    color: white;
+    position: relative;
+    bottom:50%;
+    font-size: 1.5em;
+}
+
+.info, .faq {
+    display: flex;    
+    flex-direction:column;
+    align-items: center;
+    padding: 1em;
+    margin-top: 4em;
+    color: rgb(203 83 83);
+    font-family: emoji;
+    background: linear-gradient(to right, rgb(232,232,232, 0.1), rgb(220,220,220, 0.5), rgb(212,211,210, 0.3), #C8C8C7); 
+    min-height: 60vh;
+    text-align: center;
+}
+.faq {
+    background: transparent;
+}
+.top-anchor {
+    position: relative;
+    left: 70%;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .top-anchor:hover {
+    text-align: right;
+    text-decoration: none;
+  }
+@media only screen and (max-width: 768px)
+{
+    .caption {
+       font-size: 1em;
+    }
+}

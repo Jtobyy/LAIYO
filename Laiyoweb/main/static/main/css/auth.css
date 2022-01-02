@@ -1,0 +1,73 @@
+body{
+  background: url(../images/static-4bc0d4e4-bf2d-11eb-b207-4201c0a80002.jfif) no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  height: 4em;
+  position: relative;
+  border-bottom: 1px solid black;
+  background: linear-gradient(to right, rgb(0, 0, 0, 0.03),rgb(0, 0, 0, 0.2), rgb(0,0,0,0.9));
+  transition: all 0.5s;
+  padding: 0 2em;
+}
+
+.link-icon {
+  color: rgb(251,237,211);
+  transition: all 0.15s;
+}
+  .link-icon:hover {
+    color: rgb(250,218,217);
+  }
+
+
+.form-container {
+    margin: 30px;
+    border: 3px solid cornsilk;
+    width: fit-content;
+}
+
+.form-container form {
+    padding: 30px 50px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#forgot_pass{
+    position: relative;
+    top: 40px;
+    font-weight: 400;
+    font-size: small;
+ }
+
+ #forgot_pass a
+ {
+    color: rgb(139 101 100);
+ }
+
+ .alt-sign
+ {
+  padding:20px;
+  text-align: center;
+ }
+
+ .sign-up, .sign-in {
+    background-color:  transparent;
+    transition: all 1s;
+  }
+ .sign-in:hover {
+   background-color: rgb(209,244,239);
+ }
+ 
+ .sign-up:hover {
+   background-color: rgb(251,237,212);
+ }
+
+ .mbtn {
+   margin-top: 12px;
+ }

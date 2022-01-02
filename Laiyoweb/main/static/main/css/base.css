@@ -1,0 +1,243 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.body-container {
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  position: relative;
+  transition: top 0.5s;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    height: 4em;
+    position: relative;
+    border-bottom: 1px solid black;
+    margin: 0 1.5em;
+    transition: all 0.5s;
+    padding: 0 2em;
+}
+
+.header-nav {
+  position: normal;
+}
+
+.header-icon {
+  font-size: 1.3em;
+  display: inline-block;
+}
+
+.header-icon a{
+  margin: 2em;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+.user:hover {
+  text-decoration: none;
+}
+.user span {
+  padding: 0.3em;
+}
+
+.link-icon {
+  font-size: 1.2em;
+  font-weight: 350;  
+  color: rgb(203 83 83);
+  transition: all 0.15s;
+}
+.link-icon:hover {
+  color: rgba(203, 83, 83, 0.5);
+}
+  .toggle-header {
+    position: fixed;
+    top: 1em;
+    left: 0.5em;
+    cursor: pointer;
+  }  
+  
+  .arrow-up {
+    color: rgb(98 234 234);
+    transition: all 0.15s;
+  }
+    .arrow-up:hover {
+      color: rgba(98, 234, 234, 0.9);
+    }
+
+header .logo {
+  font-weight: 900;
+  padding: 15px;
+  margin-left: 30px;
+  font-family: cursive;
+}
+
+
+div.main {
+  display: flex;
+  justify-content: center;
+  margin: 0px 30px;
+  min-height: 70vh;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+  border-top: 0.5px solid black;
+  position: relative;
+  background: linear-gradient(to left, rgb(0, 0, 0, 0.7),rgb(0, 0, 0, 0.9), rgb(0,0,0,1));
+  color: rgb(249,219,219);
+  font-size:small;
+  min-height: 60vh;
+  padding: 0 3em;
+}
+footer h3 {
+  color: rgb(82,232,217);
+}
+.contact {
+  grid-column: 1 / 2;
+  grid-row: 2/3;
+  margin-bottom: 3em;
+}
+.contact h3 {
+font-family: emoji;
+}
+.join-us {
+grid-column: 3;
+grid-row: 1/2;
+margin-top: 3em;
+}
+.join-us h3 {
+font-family: emoji; 
+font-size: 16px;  
+}
+.footer-link{
+  color:inherit;
+}
+
+.footer-link:hover {
+  color: rgb(209,244,238);
+}
+
+.copyright {
+  font-weight: 200;
+  font-size: small;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.messages
+{
+  z-index: 3;
+  display: flex;
+  position: absolute;
+  width: 30em;
+  height: 1em;
+  left: 50%;
+  margin-left: -17em;
+  opacity: 0.98;
+}
+.messages * {
+  position:relative;
+  bottom: 7px;
+}
+.close {
+  margin-top: 5px;
+}
+ul {
+  display: table-row;
+  text-align: center;
+  list-style-type: none;
+}
+.debug {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(182, 182, 47, 0.5);
+  }
+  .info {
+    width: 100%;
+    height: 100%;     
+    background-color: gainsboro;
+  }
+  .success {
+    width: 30em;
+    height: 2.5em;
+    background-color: rgba(144, 238, 144, 0.5);
+  }
+  .warning {
+    width: 100%;
+    height: 100%;        
+    background-color: rgba(231, 241, 38, 0.3);
+  }
+  .error {
+    width: 100%;
+    height: 100%;        
+    background-color: rgba(255, 50, 50, 0.5);
+  }
+  
+  .logInOut{
+    background-color: transparent;
+    border-radius: 2.5em;
+    color: rgb(203 83 83) !important;
+    border: 1px solid rgb(203 83 83) !important;
+    transition: all 0.2s;
+  }
+  .logInOut:hover {
+    background-color: rgba(203, 83, 83, 0.2) !important;
+  }
+  .small-icon{
+    font-size: 1em;
+  }
+  .small-icon a:hover {
+    text-decoration: none;
+  }  
+
+  .small-cap {
+    font-variant: small-caps;
+  }
+  .black-link {
+    color: black;
+  }
+  .logo a:hover{
+    text-decoration: none;
+    color: black;
+  }
+  img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+.username {
+  font-family: cursive;
+  font-size: small;
+}
+.top-anchor {
+  text-align: right;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.top-anchor:hover {
+  text-align: right;
+  text-decoration: none;
+}
