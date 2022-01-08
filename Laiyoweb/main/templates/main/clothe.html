@@ -12,7 +12,7 @@
 {% block main %}
 <div class="main">
     <img class="clothe_image" src="{{ object.image.url }}">
-    <a href="{% url 'main:sendmail' clothe_id=obj.id%}"><button class="btn btn-primary"> Order </button></a>
+    <a href="{% url 'main:sendmail' clothe_id=object.id %}"><button class="btn btn-primary"> Order </button></a>
 </div>
 {% endblock %}
 

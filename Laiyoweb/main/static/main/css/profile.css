@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: padding-box;
 }
 main {
     display: flex;
@@ -18,7 +18,7 @@ ul {
 }
 
 section.profile-section {
-    width: 40em;
+    width: 80vw;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0 2em;
     box-sizing: content-box;
@@ -64,7 +64,7 @@ section.profile-section {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -90px;
+    top: -89px;
 }
 
 .profile .profile-info {
@@ -78,6 +78,7 @@ section.profile-section {
 .profile-user-name {
     position: relative;
     top: -5em;
+    left: 5em;
 }
 .profile-user-name h1{
     font-size: 1.4em;    
@@ -122,12 +123,10 @@ tr {
 .grid 
 {
     display: grid;
-    grid-template-rows: 50px repeat(1, 250px);
+    grid-template-rows: 50px;
     grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: 250px;
     grid-auto-columns: 1fr;
-    gap: 2.7em;
-    margin-bottom: 4em;
+    margin-bottom: 30px;
 }
 .grid .grid-header
 {
@@ -140,7 +139,7 @@ tr {
     display: flex;   
     cursor: pointer;
     opacity: 0.8;
-    padding: 10px;  
+    padding: 10px;
 }
 
 .grid-header-item:hover, 
@@ -153,27 +152,26 @@ tr {
 {
     font-variant: small-caps;
     font-weight: lighter;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 4px;
 }
 .grid-header i{
-    font-size: 1em;    
+    font-size: 1.2em;    
     padding: 2px;
 }
-.grid .grid-item
-{
-    border: 1px solid #ffffff;
-    background-color: cornsilk;
-    }
-    .grid .grid-item img {
-        object-fit: fill;
-        width: 100%;
-        height: 100%;
-    }
-    .grid-item img:hover {
-        filter: brightness(70%);
-        transition: filter 0.5s;
-    }
+.showitem {
+    margin-bottom: 3.5em;
+}
+.showitem img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
+.mmain-container {
+    padding: 10px;
+    border-radius: 3px;
+    max-width: 100%;
+  }
     .info {
         height: 4em;
         background-color: transparent;
@@ -288,3 +286,7 @@ input[type="submit"] {
     color: wheat;
     width: 500px;
 }
+
+@media screen and (max-width: 576px){
+    
+  }

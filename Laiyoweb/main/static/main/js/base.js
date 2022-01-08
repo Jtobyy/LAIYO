@@ -28,3 +28,13 @@ function scrollV() {
   })
   }
   }
+
+function toggleSidebar() {
+  sidebar = document.querySelector('#sidebar')
+  if (sidebar.classList.length == 1) sidebar.classList.add('closed');
+  else sidebar.classList.remove('closed');
+  toggle = document.querySelector('#sidebartoggle');
+  if (toggle.classList.length == 1) toggle.classList.add('toggleclose');
+  else toggle.classList.remove('toggleclose');
+  
+}  

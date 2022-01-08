@@ -1,3 +1,8 @@
+:root {  
+  --themecolor: rgb(203 83 83);
+  --headercolor: rgb(82,232,217);
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -7,7 +12,8 @@ body{
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: white;
+  background: linear-gradient(white, rgba(225, 225, 225, 0.8), white), url(../images/italian-dressmaker-1240630.jpg);
+  font-size: 14px;
 }
 a {
   text-decoration: none;
@@ -112,25 +118,33 @@ div.main {
   padding: 0 3em;
 }
 footer h3 {
+  font-size: 2em;
+  padding: 20px;
+  font-family: emoji; 
   color: rgb(82,232,217);
 }
 .contact {
-  grid-column: 1 / 2;
+  grid-column: 1 / 3;
   grid-row: 2/3;
   margin-bottom: 3em;
 }
-.contact h3 {
-font-family: emoji;
+
+.contact tr {
+  font-size: 1.5em;
+  height: 40px;
+}
+.contact tr td i {
+  color: var(--headercolor);
+}
+.contact span {
+  margin-left: 15px;
 }
 .join-us {
 grid-column: 3;
 grid-row: 1/2;
 margin-top: 3em;
 }
-.join-us h3 {
-font-family: emoji; 
-font-size: 16px;  
-}
+
 .footer-link{
   color:inherit;
 }
@@ -142,7 +156,7 @@ font-size: 16px;
 .copyright {
   font-weight: 200;
   font-size: small;
-  position: fixed;
+  position: absolute;
   right: 20px;
   bottom: 20px;
 }
@@ -202,9 +216,13 @@ ul {
     color: rgb(203 83 83) !important;
     border: 1px solid rgb(203 83 83) !important;
     transition: all 0.2s;
+    height: 30px;
   }
   .logInOut:hover {
     background-color: rgba(203, 83, 83, 0.2) !important;
+  }
+  .logInOut * {
+    display: inline-block;
   }
   .small-icon{
     font-size: 1em;
@@ -232,6 +250,7 @@ ul {
   font-family: cursive;
   font-size: small;
 }
+
 .top-anchor {
   text-align: right;
   text-decoration: none;
@@ -240,4 +259,81 @@ ul {
 .top-anchor:hover {
   text-align: right;
   text-decoration: none;
+}
+.sidebar {
+  display: none;
+}
+
+
+/* mobile design */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: block;
+    position: relative;
+    background-color: blanchedalmond;
+    width: 200px;
+    line-height: 2.05em;
+    opacity: 0.98;
+    position: fixed;
+    z-index: 3;
+    height: 100vh;
+    top: 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    left: 0px;
+    transition: all 0.6s;
+  }
+  .closed {
+    left: -200px;
+  }
+  .closed *{
+    display: none;
+  }
+  
+  .sidebartoggle {
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    left: 0px;
+    transition: all 0.7s;
+  }
+  .toggleline {
+    background-color: var(--themecolor);
+    height: 2.5px;
+    width: 18px;
+    margin: 3px;
+   }
+ 
+  .toggleclose {
+    left: 120px;
+  }
+  .toggleclose #toggleline2 {
+    display: none;
+  }
+  .toggleclose #toggleline1 {
+    margin: 1px;
+    transform: rotate(50deg);
+  }
+  .toggleclose #toggleline3 {
+    transform: rotate(-50deg);
+    margin: 1px;
+  }
+  .logInOut {
+    border: 0px !important;
+  }
+  
+  .toggle-header,
+  .header-nav,
+  .logInOut p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact tr {
+    font-size: 1.2em;
+    height: 35px;
+  }
 }

@@ -56,29 +56,33 @@ tailorProfile
         <!-- End of profile section -->
     </section>
 
-    <div class="grid">
-        <div class="grid-header">
-            <div class="grid-header-item" tabindex="0">
-                <i class="bi-grid-3x3-gap"></i>
-                <h3> Posts </h3>
-            </div>
-        </div>
-        {% if clothes %}
-        {% for obj in clothes %}
-            <div class="grid-item">
-                <a href="{% url 'main:clothe_sample' clothe_id=obj.id %}"><img class="grid-item" src="{{ obj.image.url }}" alt=" " ></a>
-                <div class="info">
-                    <span class="price"> {{ obj.price }} </span>
-                    <span class="category"> {{ obj.category }} </span>
+    <div class="mmain-container">
+        <div class="grid">
+            <div class="grid-header">
+                <div class="grid-header-item" tabindex="0">
+                    <i class="bi-grid-3x3-gap"></i>
+                    <h3> Posts </h3>
                 </div>
             </div>
-            
-        {% endfor %}
-        {% else %}
-            <div class="empty">
-                <p class="empty-text"> You have no posts yet. </p>
-            </div>
-        {% endif %}
+        </div>
+        <div class="row">
+            {% if clothes %}
+            {% for obj in clothes %}
+                <div class="col-sm-4 showitem">
+                    <a href="{% url 'main:clothe_sample' clothe_id=obj.id %}"><img class="grid-item" src="{{ obj.image.url }}" alt=" " ></a>
+                    <div class="info">
+                        <span class="price"> {{ obj.price }} </span>
+                        <span class="category"> {{ obj.category }} </span>
+                    </div>
+                </div>
+
+            {% endfor %}
+            {% else %}
+                <div class="empty">
+                    <p class="empty-text"> You have no posts yet. </p>
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
 

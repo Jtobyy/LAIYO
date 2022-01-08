@@ -9,9 +9,10 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">        
         <link rel="stylesheet" href="{% static 'main/css/font/bootstrap-icons.css' %}">
-        <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
         <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
         {% block links %}
         {% endblock %}
     </head>
@@ -36,6 +37,11 @@
     {% block header %}
     <header tabindex="0">
         <div class="header-container" id="header" style="top: 0em">
+            <div id="sidebartoggle" class="sidebartoggle" onclick="toggleSidebar()">
+                <div class='toggleline' id="toggleline1"></div>
+                <div class='toggleline' id="toggleline2"></div>
+                <div class='toggleline' id="toggleline3"></div>
+            </div>        
             <div class="logo" tabindex="0">
                 <a href="{% url 'main:welcome' %}" class="black-link small-cap">LAYO</a>
             </div>
@@ -51,7 +57,8 @@
             {% if request.user == AnonymousUser %}   
                 <a href="{% url 'main:auth' %}" class="user">    
                     <button class='logInOut btn-outline-dark'>
-                        Sign In/Up
+                        <p>Sign In/Up</p>
+                        <span class="glyphicon glyphicon-user"></span>
                     </button>
                 </a>    
             {% else %}
@@ -67,7 +74,14 @@
             </div>
             {% endif %}
             </div>
-        </div>  
+            <div class='sidebar closed' id='sidebar'>
+                {% block sidenav %}    
+                <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}">Home</a></li>
+                <li title="help" class="header-icon small-icon"><a class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
+                <li title="help" class="header-icon small-icon small-cap"><a class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>                
+                {% endblock %}    
+            </div>
+        </div>
     </header>
     {% endblock %}
     
@@ -82,28 +96,28 @@
             <div class="footer">
                 <div class="contact">
                     <h3>Contact us</h3>
-                    <ul>
-                        <li>
-                            <img>
-                            <span>:phone-number</span>    
-                        </li>
-                        <li>
-                            <img>
-                            <span>:facebook-page</span>    
-                        </li>
-                        <li>
-                            <img>
-                            <span>:instagram-account</span>
-                        </li>
-                        <li>
-                            <img>
-                            <span>:linkedIn</span>    
-                        </li>
-                        <li>
-                            <img>
-                            <span>:twitter</span>    
-                        </li>
-                    </ul>
+                    <table>
+                        <tr>
+                            <td><i class="bi-whatsapp"></i></td>
+                            <td><span>phone-number</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi-facebook"></i></td>
+                            <td><span>facebook-page</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi-instagram"></i></td>
+                            <td><span>instagram-account</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi-linkedin"></i></td>
+                            <td><span>linkedIn</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi-twitter"></i></td>
+                            <td><span>twitter</span></td>
+                        </tr>
+                    </table>
                 </div>    
                 <div class="join-us">
                     <h3>Join us</h3>
@@ -119,9 +133,9 @@
             </div>
         </footer>
     {% block headertoggle %}
-    <div class="toggle-header">
-        <span class="arrow-up" id="arrow-up" onclick="toggleHeader()"><i class="bi-arrow-90deg-up"></i></span>
-    </div>
+        <div class="toggle-header">
+            <span class="arrow-up" id="arrow-up" onclick="toggleHeader()"><i class="bi-arrow-90deg-up"></i></span>
+        </div>
     {% endblock %}
     </div>
     <script src="{% static 'main/js/jquery.min.js' %}"></script>

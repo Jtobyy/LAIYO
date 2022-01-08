@@ -52,7 +52,7 @@ function fillImageShow(resp) {
         for (let j = 0; j < resp[i].length; j++) {
             let arg = resp[i][j];
             let item = document.createElement('div');
-            item.className = 'col-4';
+            item.className = 'col-sm-6';
             let imageDiv = document.createElement('div');
             imageDiv.className = 'img';
             let image = document.createElement('img');

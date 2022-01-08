@@ -1,12 +1,7 @@
 body {
-  background-image: none;
-  background-size: cover;
-  background-position:center;
   z-index: 1;
-  background-color: rgb(243 239 239 / 90%);
 }
 .header-container {
-  background: linear-gradient(to right, #F4F0F0, white, white, #F4F0F0);
   margin: 0 1.5em;
 } 
 .link-icon {
@@ -31,6 +26,7 @@ div.main {
     margin: 0px;
     padding: 0px;
     }
+    
 .filter {
     position: fixed;
     background-color: white;
@@ -83,7 +79,7 @@ div.main {
     height: 100%;
 }
 .info {
-height: 4em;
+height: 5em;
 background-color: transparent;
 text-align: center;
 line-height: 1em;
@@ -96,7 +92,7 @@ font-weight: 100;
 .price {
   padding: 2px;
   margin: 0.2em;
-  font-size: medium !important;
+  font-size: 1.2em !important;
 }
 .price:before {
 content: 'N';
@@ -132,4 +128,10 @@ content: 'N';
   border: 5px;
   margin: 20px 0px;
   padding: 0.2em;
+}
+
+@media screen and (max-width: 576px){
+  .mmain-container {
+    padding: 30px;
+  }
 }

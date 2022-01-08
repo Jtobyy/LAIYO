@@ -12,21 +12,34 @@
 {% block main %}
 <div class="catImages container">
 <div class="row wlc">
+    <div class="wlcPic row" id="mslideShow">
+        <div id="wrap">
+            <div class="slideimg">
+                <img src="{% static 'main/images/pattern-1484981.jpg' %}">
+            </div>    
+            <div class="slideimg">
+                <img src="{% static 'main/images/bermix-studio-wJ7atxTNeQE-unsplash.jpg' %}">
+            </div>
+            <div class="slideimg">
+                <img src="{% static 'main/images/blake-connally-IKUYGCFmfw4-unsplash.jpg' %}">
+            </div>
+        </div>
+    </div>    
     <div class="wlcMsg col">
         <h1><span> Sewing your outfits efficiently </span></h1>
     </div>
     <div class="wlcPic col" id="slideShow">
-    <div id="wrap">
-    <div class="slideimg">
-        <img src="{% static 'main/images/pattern-1484981.jpg' %}">
-    </div>    
-    <div class="slideimg">
-        <img src="{% static 'main/images/bermix-studio-wJ7atxTNeQE-unsplash.jpg' %}">
-    </div>
-    <div class="slideimg">
-        <img src="{% static 'main/images/blake-connally-IKUYGCFmfw4-unsplash.jpg' %}">
-    </div>
-    </div>
+        <div id="wrap">
+            <div class="slideimg">
+                <img src="{% static 'main/images/pattern-1484981.jpg' %}">
+            </div>    
+            <div class="slideimg">
+                <img src="{% static 'main/images/bermix-studio-wJ7atxTNeQE-unsplash.jpg' %}">
+            </div>
+            <div class="slideimg">
+                <img src="{% static 'main/images/blake-connally-IKUYGCFmfw4-unsplash.jpg' %}">
+            </div>
+        </div>
     </div>    
 </div>
 <div class="row category">
@@ -60,14 +73,47 @@
     -->
 </div>
 
+<!-- small width screen display of category -->
+<div class="row mobcategory">
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Female clothings </span>
+    </div>
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Male clothings </span>
+    </div>
 </div>
+<div class="row mobcategory">
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Infants </span>
+    </div>    
+    <div class="col category-item">
+        <a href="#"><img src="{% static 'main/images/dressmaker-1416196.jpg' %}"></a>
+        <span class="caption"> Traditional attires </span>
+    </div>
+</div>
+<div class="row mobcategory justify-content-center">
+    <div class="col-6 category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Modern clothings </span>
+    </div>
+    <!--
+    <div class="col-4 category-item">
+        <a href="#"><img src="{% static 'main/images/pattern-1484981.jpg' %}"></a>
+        <span class="caption"> Classic clothings </span>
+    </div>
+    -->
+</div>
+<!-- mobile end -->
+<div class=anchorwrap><a href="#main" onclick="scrollV()" class="top-anchor" id="topaid">Back to top <i class="bi-arrow-up"></i></a></div>
 <div class="info" id="info">
     <h2> How it works </h2>
 </div>
 <div class="faq" id="faq">
     <h2> Frequently Asked Questions </h2>
 </div>
-<a href="#main" onclick="scrollV()" class="top-anchor">Back to top <i class="bi-arrow-up"></i></a>
 {% endblock %}
 {% block scripts %}
 <script src="{% static 'main/js/welcome.js' %}"></script>    

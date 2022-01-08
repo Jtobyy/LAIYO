@@ -7,18 +7,24 @@ from django.contrib.auth.models import AnonymousUser, User, Group
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from .forms import RegForm
-from .models import CATEGORIES, Clothe, Tailor
+from .models import CATEGORIES, Clothe, Customer, Tailor
 from django.core import serializers
+from django.conf import settings
 import json
 
-def mail_view(request, id):
+@login_required(login_url='main/login.html')
+def mail_view(request, clothe_id):
+    sender = Customer.objects.get(user=request.user.id)    
     send_mail(
-    'subject=Testing',
-    'body=Hoping this works',
-    'from@jtobi8161@gmail.com',
-    ['to@jtobi8161@gmail.com'],
-    fail_silently=False
-    )
+            'New Cloth Order',
+            f'This is an order for this clothe ... by {request.user} with email address {request.user.email}\
+                and phone number {sender.phone_no}, from: {sender.address}',
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[settings.RECIPIENT_ADDRESS],
+            fail_silently=False
+            )
+    
+    return render(request, 'main/clothe.html', None)
 
 def edit_view(request, tailor):
     tailor = int(tailor)    
@@ -34,6 +40,7 @@ def edit_view(request, tailor):
             thistailor.save()
         return redirect(f'/main/tailorProfile/{tailor}')
 
+@login_required(login_url='main/login.html')
 def clothe_sample_view(request, clothe_id):
     object = Clothe.objects.get(id=clothe_id)
     return render(request, 'main/clothe.html', {'object': object})
