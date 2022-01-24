@@ -1,25 +1,19 @@
 slideShow = document.getElementById('wrap')
 window.onload = function () {    
 let i = 0;
-let j = 0;    
+slideimgs = document.getElementsByClassName('slideimg')
+first = document.getElementById('slide1').classList.add('visible')
+
 setInterval(() => {
-    let sStyle = slideShow.style;
-    if (sStyle.length == 0) slideShow.style['top']  = -60 + 'vh';
+    if (i == 0) {    
+        slideimgs[3].classList.remove('visible')    
+        slideimgs[0].classList.add('visible') }
     else {
-    current = sStyle['top']
-    arr = current.split('v')
-    val = arr[0]
-    slideShow.style['top']  = val - 60 + 'vh';}
-    i++
-    if (i >= 3)
-    {
-        let v = document.getElementsByClassName('slideimg')[j]
-        let node = v.cloneNode(deep=true)
-        slideShow.appendChild(node)
-        if (j >= 3) j = 0;
-        else j++
-    }
-    }, 8000);
+    slideimgs[i-1].classList.remove('visible')
+    slideimgs[i].classList.add('visible') }
+    i++;
+    if (i == slideimgs.length) i = 0;
+    }, 5000);
 }
 function scrollV() {
     let anchorlinks = document.querySelectorAll('a[href^="#"]')
@@ -35,4 +29,4 @@ function scrollV() {
         e.preventDefault()
     })
     }
-    }
+}

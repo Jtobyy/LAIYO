@@ -6,6 +6,13 @@ auth
 {% endblock %}
 
 {% block header %}
+<header tabindex="0">
+    <div class="header-container" id="header" style="top: 0em">
+        <div class="logo" tabindex="0">
+            <a href="{% url 'main:welcome' %}" class="black-link small-cap">L'AYO</a>
+        </div>
+    </div>
+</header>
 {% endblock %}
 
 {% block links %}

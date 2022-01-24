@@ -43,16 +43,34 @@
                 <div class='toggleline' id="toggleline3"></div>
             </div>        
             <div class="logo" tabindex="0">
-                <a href="{% url 'main:welcome' %}" class="black-link small-cap">LAYO</a>
+                <a href="{% url 'main:welcome' %}" class="black-link small-cap">L'AYO</a>
             </div>
-            <nav class="header-nav">    
+            <nav class="header-nav nav1">    
                 <ul>
-                    {% block nav %}
-                    <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}"><i class="bi-house-door"></i></a></li></a></li>
-                    <li title="help" class="header-icon small-icon"><a class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
-                    <li title="help" class="header-icon small-icon small-cap"><a class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>
-                    {% endblock %}
+                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Men</a></li></a></li>
+                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Women</a></li></a></li>
+                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Kids</a></li></a></li>
                 </ul>
+            </nav>
+            <nav class="header-nav nav2">
+                <ul>
+                    <li class="link-icon nav-item">
+                        <span>Fabric</span>
+                        <ul class="dropdown" id='fabricDropdown' tabindex="0">
+                            <li><a>Guinea</a></li>
+                            <li><a>Senator</a></li>
+                            <li><a>Various other materials</a></li>
+                        </ul>    
+                    </li>                        
+                    <li class="link-icon nav-item"><span>Tailors</span></li>
+                    <li class="link-icon nav-item"><span>Fashion Designers</span></li>
+                </ul>
+            </nav>
+            <nav class="header-nav nav3">
+                <ul>
+                    <li title="help"><a class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
+                    <li title="help" class="small-cap"><a class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>
+                </ul>    
             </nav>
             {% if request.user == AnonymousUser %}   
                 <a href="{% url 'main:auth' %}" class="user">    
@@ -75,11 +93,23 @@
             {% endif %}
             </div>
             <div class='sidebar closed' id='sidebar'>
-                {% block sidenav %}    
+            
+            {% block sidenav %}    
+            <ul>
                 <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}">Home</a></li>
-                <li title="help" class="header-icon small-icon"><a class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
-                <li title="help" class="header-icon small-icon small-cap"><a class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>                
-                {% endblock %}    
+                </br></br>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Men</a></li></a></li>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Women</a></li></a></li>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Kids</a></li></a></li>
+                </br>
+                <li class="link-icon nav-item">Fabric</li>
+                <li class="link-icon nav-item">Tailors</li>
+                <li class="link-icon nav-item">Fashion Designers</li>
+                </br>
+                <li title="help" class="header-icon small-icon"><a onclick="scrollV()" class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
+                <li title="help" class="header-icon small-icon small-cap"><a onclick="scrollV()"" class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>                                
+            </ul>
+            {% endblock %}    
             </div>
         </div>
     </header>
@@ -94,48 +124,79 @@
         </div>
         <footer>
             <div class="footer">
-                <div class="contact">
-                    <h3>Contact us</h3>
-                    <table>
-                        <tr>
-                            <td><i class="bi-whatsapp"></i></td>
-                            <td><span>phone-number</span></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi-facebook"></i></td>
-                            <td><span>facebook-page</span></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi-instagram"></i></td>
-                            <td><span>instagram-account</span></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi-linkedin"></i></td>
-                            <td><span>linkedIn</span></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi-twitter"></i></td>
-                            <td><span>twitter</span></td>
-                        </tr>
-                    </table>
-                </div>    
-                <div class="join-us">
-                    <h3>Join us</h3>
+                <div class="company">
+                    <h3>The Company</h3>
                     <ul>
                         <li>
-                            <a href="{% url 'main:join' %}" class="footer-link">Become a tailor on Layo</a>
+                            <a href="{% url 'main:join' %}" class="footer-link">About us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Blog</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Return Policy</a>
                         </li>
                     </ul>
                 </div>
+                <div class="services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Fabrics</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Tailors</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Fashion designers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="Questions">
+                    <h3>Questions?</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="join">
+                    <h3>Be a tailor on L'ayo</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">How to</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'main:join' %}" class="footer-link">Terms and Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h3>Contact and connect with us</h3>
+                    <ul>
+                        <li><a href=""><i class="bi-instagram"></i></li></a>
+                        <li><a href=""><i class="bi-twitter"></i></li></a>
+                        <li><a href=""><i class="bi-facebook"></i></li></a>
+                        <li><a href=""><i class="bi-whatsapp"></i></li></a>
+                        <li><a href=""><i class="bi-tiktok"></i></li></a>
+                    </ul>
+                    
+                </div>
+                
                 <div class="copyright">
-                    &copy Layo 2022
+                    &copy L'ayo 2022
                 </div>
             </div>
         </footer>
     {% block headertoggle %}
+    <!--
         <div class="toggle-header">
             <span class="arrow-up" id="arrow-up" onclick="toggleHeader()"><i class="bi-arrow-90deg-up"></i></span>
         </div>
+        -->
     {% endblock %}
     </div>
     <script src="{% static 'main/js/jquery.min.js' %}"></script>

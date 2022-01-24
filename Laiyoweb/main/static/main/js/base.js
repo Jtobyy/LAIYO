@@ -15,7 +15,6 @@ function toggleHeader() {
 
 function scrollV() {
   let anchorlinks = document.querySelectorAll('a[href^="#"]')
-
   for (let item of anchorlinks) { // relitere 
       item.addEventListener('click', (e)=> {
       let hashval = item.getAttribute('href')
@@ -36,5 +35,11 @@ function toggleSidebar() {
   toggle = document.querySelector('#sidebartoggle');
   if (toggle.classList.length == 1) toggle.classList.add('toggleclose');
   else toggle.classList.remove('toggleclose');
-  
 }  
+
+function showDropdown() {
+  document.getElementById('fabricDropdown').classList.remove('hidden')
+}
+function hideDropdown() {
+  document.getElementById('fabricDropdown').classList.add('hidden')
+}
