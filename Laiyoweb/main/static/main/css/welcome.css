@@ -2,6 +2,7 @@
     --themecolor: rgb(203 83 83);
     --headercolor: rgb(82,232,217);
   }
+  
 div.main {
     margin: 2em;
     margin-top: -4em;
@@ -207,29 +208,6 @@ h1 {
     .slideimg h1 {
         font-size: 3em;
     }
-}
-@media only screen and (max-width: 768px)
-{
-    .wlc    {
-        margin-bottom: 0;
-    }
-    #slideShow {
-        display: none;
-    }
-    #mslideShow {
-        display: block;
-        position: relative;
-        transition: all 1s;
-        overflow: hidden;
-        height: 40vh;
-        width: 100%;
-        margin: -50px 0px 0px 0px;
-        border-radius: 30px;
-        background-color: red; /* for testing*/
-    }
-    .wlcMsg h1 {
-        font-size: 2.5em;
-    }
        
     .caption {
        font-size: 1em;
@@ -270,10 +248,7 @@ h1 {
     #slideShow {
         width: 100vw;
     }           
-}
-@media only screen and (max-width: 480px)
-{
-    .category {
+    .category, .catwrapper {
         display: none;
     }
     .mobcategory {

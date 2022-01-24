@@ -93,22 +93,23 @@
             {% endif %}
             </div>
             <div class='sidebar closed' id='sidebar'>
-                {% block sidenav %}    
-                <ul>
-                    <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}">Home</a></li>
-                    </br></br>
-                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Men</a></li></a></li>
-                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Women</a></li></a></li>
-                    <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Kids</a></li></a></li>
-                    </br>
-                    <li class="link-icon nav-item">Fabric</li>
-                    <li class="link-icon nav-item">Tailors</li>
-                    <li class="link-icon nav-item">Fashion Designers</li>
-                    </br>
-                    <li title="help" class="header-icon small-icon"><a onclick="scrollV()" class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
-                    <li title="help" class="header-icon small-icon small-cap"><a onclick="scrollV()"" class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>                                
-                </ul>
-                {% endblock %}    
+            
+            {% block sidenav %}    
+            <ul>
+                <li title="home" class="header-icon"><a class="link-icon" href="{% url 'main:home' %}">Home</a></li>
+                </br></br>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Men</a></li></a></li>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Women</a></li></a></li>
+                <li title="home"><a class="link-icon" href="{% url 'main:home' %}">Kids</a></li></a></li>
+                </br>
+                <li class="link-icon nav-item">Fabric</li>
+                <li class="link-icon nav-item">Tailors</li>
+                <li class="link-icon nav-item">Fashion Designers</li>
+                </br>
+                <li title="help" class="header-icon small-icon"><a onclick="scrollV()" class="link-icon" href="{% url 'main:welcome' %}#info">How it works</a></li>
+                <li title="help" class="header-icon small-icon small-cap"><a onclick="scrollV()"" class="link-icon" href="{% url 'main:welcome' %}#faq">faq</a></li>                                
+            </ul>
+            {% endblock %}    
             </div>
         </div>
     </header>
@@ -162,9 +163,8 @@
                         </li>
                     </ul>
                 </div>
-
-                <div class="join-us">
-                    <h3>Join us</h3>
+                <div class="join">
+                    <h3>Be a tailor on L'ayo</h3>
                     <ul>
                         <li>
                             <a href="{% url 'main:join' %}" class="footer-link">How to</a>
@@ -182,7 +182,8 @@
                         <li><a href=""><i class="bi-facebook"></i></li></a>
                         <li><a href=""><i class="bi-whatsapp"></i></li></a>
                         <li><a href=""><i class="bi-tiktok"></i></li></a>
-                    </ul>         
+                    </ul>
+                    
                 </div>
                 
                 <div class="copyright">
@@ -190,11 +191,13 @@
                 </div>
             </div>
         </footer>
+    {% block headertoggle %}
     <!--
         <div class="toggle-header">
             <span class="arrow-up" id="arrow-up" onclick="toggleHeader()"><i class="bi-arrow-90deg-up"></i></span>
         </div>
         -->
+    {% endblock %}
     </div>
     <script src="{% static 'main/js/jquery.min.js' %}"></script>
     <script src="{% static 'main/js/bootstrap.min.js' %}"></script>    
