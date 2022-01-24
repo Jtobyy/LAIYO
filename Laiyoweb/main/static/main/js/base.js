@@ -35,6 +35,7 @@ function toggleSidebar() {
   toggle = document.querySelector('#sidebartoggle');
   if (toggle.classList.length == 1) toggle.classList.add('toggleclose');
   else toggle.classList.remove('toggleclose');
+<<<<<<< HEAD
 }  
 
 function showDropdown() {
@@ -43,3 +44,7 @@ function showDropdown() {
 function hideDropdown() {
   document.getElementById('fabricDropdown').classList.add('hidden')
 }
+=======
+  
+}  
+>>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
