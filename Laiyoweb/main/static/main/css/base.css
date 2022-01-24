@@ -15,11 +15,7 @@ body{
   flex-direction: column;
   overflow: hidden;
   background: linear-gradient(white, rgba(225, 225, 225, 0.8), white), url(../images/italian-dressmaker-1240630.jpg);
-<<<<<<< HEAD
   font-size: 13px;
-=======
-  font-size: 14px;
->>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
 }
 a {
   text-decoration: none;
@@ -173,7 +169,6 @@ div.main {
   min-height: 50vh;
   width: 100%;
 }
-<<<<<<< HEAD
 footer div {
   padding: 50px;
   border-top: 0px;
@@ -188,12 +183,6 @@ footer h3 {
   padding: 0 0 10px 20px;
   font-family: emoji; 
   font-variant: small-caps;
-  color: rgb(82,232,217);
-=======
-footer h3 {
-  font-size: 2em;
-  padding: 20px;
-  font-family: emoji; 
   color: rgb(82,232,217);
 }
 .contact {
@@ -211,18 +200,13 @@ footer h3 {
 }
 .contact span {
   margin-left: 15px;
->>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
 }
 footer ul {
   text-align: left;
 }
-<<<<<<< HEAD
 footer li {
   padding: 5px 20px;
 }
-=======
-
->>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
 .footer-link{
   color:inherit;
 }
@@ -388,8 +372,6 @@ ul {
     padding-top: 50px;
     left: 0px;
     transition: all 0.6s;
-<<<<<<< HEAD
-    font-size: 1.2em;
   }
   .sidebar ul {
     padding: 0;
@@ -406,8 +388,6 @@ ul {
     font-weight: 900;
     padding: 1px;
     position: relative;
-=======
->>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
   }
   .closed {
     left: -200px;
@@ -453,7 +433,7 @@ ul {
   .logInOut p {
     display: none;
   }
-<<<<<<< HEAD
+
   footer div {
   padding: 50px 0 50px 50px;
   border-top: 0px;
@@ -506,8 +486,6 @@ ul {
   .sidebar {
     font-size: initial;
   }
-  
-=======
 }
 
 @media screen and (max-width: 576px) {
@@ -515,5 +493,5 @@ ul {
     font-size: 1.2em;
     height: 35px;
   }
->>>>>>> d13c221cfeb41a65676abf793288c686cf9dce2f
+
 }
